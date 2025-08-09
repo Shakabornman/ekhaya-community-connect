@@ -41,6 +41,13 @@ const Hero = () => {
               <Button
                 size="lg"
                 className="bg-warm-orange hover:bg-warm-orange/90 text-white shadow-elevated"
+                onClick={() => window.location.href = '/book-appointment'}
+              >
+                Book Appointment
+              </Button>
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-white shadow-elevated"
                 onClick={() => scrollToSection('services')}
               >
                 Our Services

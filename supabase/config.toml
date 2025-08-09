@@ -1,1 +1,9 @@
 project_id = "fbhjsxikcmtfimjmgzcu"
+
+[auth]
+enabled = true
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["https://fbhjsxikcmtfimjmgzcu.lovable.app"]
+
+[functions.send-appointment-confirmation]
+verify_jwt = false
