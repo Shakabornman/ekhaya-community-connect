@@ -35,7 +35,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-medical-green" />
-                <span>123 Community Street, Galeshewe, Kimberley</span>
+                <span>Co Hulana and Motopo Street, Galeshewe, Kimberley</span>
               </div>
             </div>
           </div>

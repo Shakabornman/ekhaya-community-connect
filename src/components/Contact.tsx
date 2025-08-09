@@ -17,7 +17,7 @@ const Contact = () => {
       icon: MapPin,
       title: "Our Location",
       details: [
-        { label: "Address", value: "123 Community Street", urgent: false },
+        { label: "Address", value: "Co Hulana and Motopo Street", urgent: false },
         { label: "Area", value: "Galeshewe, Kimberley", urgent: false },
         { label: "Province", value: "Northern Cape, South Africa", urgent: false }
       ]
@@ -130,7 +130,7 @@ const Contact = () => {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-medical-green mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-medium text-primary">123 Community Street</p>
+                  <p className="font-medium text-primary">Co Hulana and Motopo Street</p>
                   <p className="text-muted-foreground">Galeshewe, Kimberley</p>
                   <p className="text-muted-foreground">Northern Cape, South Africa</p>
                 </div>

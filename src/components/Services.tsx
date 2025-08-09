@@ -10,7 +10,10 @@ import {
   Eye,
   Bone,
   Shield,
-  Activity
+  Activity,
+  Brain,
+  Bandage,
+  Droplet
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -87,6 +90,27 @@ const Services = () => {
       description: "Physical therapy and rehabilitation services for recovery and mobility improvement.",
       badge: "Recovery",
       color: "bg-indigo-500"
+    },
+    {
+      icon: Brain,
+      title: "Psychiatric Services",
+      description: "Mental health care including counseling, therapy, and psychiatric consultations.",
+      badge: "Mental Health",
+      color: "bg-purple-600"
+    },
+    {
+      icon: Bandage,
+      title: "Wound Care",
+      description: "Specialized wound care and treatment for chronic wounds, ulcers, and injuries.",
+      badge: "Specialized",
+      color: "bg-orange-600"
+    },
+    {
+      icon: Droplet,
+      title: "IV Clinic",
+      description: "Intravenous therapy services including hydration, medication administration, and infusions.",
+      badge: "Infusion",
+      color: "bg-cyan-600"
     }
   ];
 
@@ -116,15 +140,15 @@ const Services = () => {
                   <div className="text-sm text-muted-foreground">Emergency Care</div>
                 </div>
                 <div className="text-center p-4 bg-soft-gray rounded-lg">
-                  <div className="text-2xl font-bold text-medical-green">45</div>
+                  <div className="text-2xl font-bold text-medical-green">24</div>
                   <div className="text-sm text-muted-foreground">Hospital Beds</div>
                 </div>
                 <div className="text-center p-4 bg-soft-gray rounded-lg">
-                  <div className="text-2xl font-bold text-warm-orange">120+</div>
+                  <div className="text-2xl font-bold text-warm-orange">60+</div>
                   <div className="text-sm text-muted-foreground">Staff Members</div>
                 </div>
                 <div className="text-center p-4 bg-soft-gray rounded-lg">
-                  <div className="text-2xl font-bold text-primary">15K+</div>
+                  <div className="text-2xl font-bold text-primary">100's</div>
                   <div className="text-sm text-muted-foreground">Patients Served</div>
                 </div>
               </div>
@@ -169,7 +193,7 @@ const Services = () => {
             Our emergency department is always ready to provide immediate medical care when you need it most.
           </p>
           <div className="text-3xl font-bold">
-            Emergency Hotline: 053 123 4567
+            Emergency Hotline: 061 522 0536
           </div>
         </div>
       </div>
