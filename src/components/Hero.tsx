@@ -60,7 +60,7 @@ const Hero = () => {
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
                 <Phone className="w-6 h-6 text-warm-orange mb-2" />
                 <p className="text-sm font-medium">Emergency</p>
-                <p className="text-lg font-bold">053 123 4567</p>
+                <p className="text-lg font-bold">061 522 0536</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
                 <Clock className="w-6 h-6 text-medical-green mb-2" />
@@ -89,11 +89,11 @@ const Hero = () => {
               <div className="space-y-4">
                 <div className="flex items-center justify-between p-4 bg-soft-gray rounded-lg">
                   <span className="font-medium">Emergency Line</span>
-                  <span className="text-lg font-bold text-primary">053 123 4567</span>
+                  <span className="text-lg font-bold text-primary">061 522 0536</span>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-soft-gray rounded-lg">
                   <span className="font-medium">General Enquiries</span>
-                  <span className="text-lg font-bold text-primary">053 123 4568</span>
+                  <span className="text-lg font-bold text-primary">053 0500 0500</span>
                 </div>
               </div>
               

@@ -31,7 +31,7 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-medical-green" />
-                <span className="font-bold text-warm-orange">Emergency: 053 123 4567</span>
+                <span className="font-bold text-warm-orange">Emergency: 061 522 0536</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-medical-green" />
@@ -85,11 +85,11 @@ const Footer = () => {
             <div className="space-y-3">
               <div>
                 <p className="text-sm font-medium text-warm-orange mb-1">Emergency Line</p>
-                <p className="text-lg font-bold">053 123 4567</p>
+                <p className="text-lg font-bold">061 522 0536</p>
               </div>
               <div>
                 <p className="text-sm font-medium text-warm-orange mb-1">General Enquiries</p>
-                <p>053 123 4568</p>
+                <p>053 0500 0500</p>
               </div>
               <div>
                 <p className="text-sm font-medium text-warm-orange mb-1">Email</p>
@@ -103,7 +103,7 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 py-6">
           <div className="bg-medical-green/20 rounded-lg p-4 text-center">
             <p className="text-lg font-bold mb-2">Medical Emergency? Call Now!</p>
-            <p className="text-2xl font-bold text-warm-orange">053 123 4567</p>
+            <p className="text-2xl font-bold text-warm-orange">061 522 0536</p>
             <p className="text-sm text-primary-foreground/80 mt-1">Available 24 hours a day, 7 days a week</p>
           </div>
         </div>
@@ -115,7 +115,7 @@ const Footer = () => {
               © 2024 Hospital@Ekhaya. All rights reserved.
             </p>
             <p className="text-primary-foreground/80">
-              Proudly serving the Galeshewe community since 2018
+              Proudly serving the Galeshewe community since 2024
             </p>
           </div>
         </div>

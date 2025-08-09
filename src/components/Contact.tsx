@@ -8,8 +8,8 @@ const Contact = () => {
       icon: Phone,
       title: "Phone Numbers",
       details: [
-        { label: "Emergency Line", value: "053 123 4567", urgent: true },
-        { label: "General Enquiries", value: "053 123 4568", urgent: false },
+        { label: "Emergency Line", value: "061 522 0536", urgent: true },
+        { label: "General Enquiries", value: "053 0500 0500", urgent: false },
         { label: "Appointments", value: "053 123 4569", urgent: false }
       ]
     },
@@ -43,8 +43,8 @@ const Contact = () => {
   ];
 
   const departments = [
-    { name: "Emergency Department", hours: "24/7", phone: "053 123 4567" },
-    { name: "General Practice", hours: "Mon-Fri: 7AM-5PM", phone: "053 123 4568" },
+    { name: "Emergency Department", hours: "24/7", phone: "061 522 0536" },
+    { name: "General Practice", hours: "Mon-Fri: 7AM-5PM", phone: "053 0500 0500" },
     { name: "Maternity Ward", hours: "24/7", phone: "053 123 4570" },
     { name: "Pharmacy", hours: "Mon-Fri: 8AM-5PM", phone: "053 123 4571" },
     { name: "Laboratory", hours: "Mon-Fri: 7AM-4PM", phone: "053 123 4572" },
@@ -93,7 +93,7 @@ const Contact = () => {
           <p className="text-xl mb-6 text-white/90">
             Call our emergency line immediately for urgent medical assistance
           </p>
-          <div className="text-4xl font-bold mb-6">053 123 4567</div>
+          <div className="text-4xl font-bold mb-6">061 522 0536</div>
           <Button size="lg" className="bg-white text-medical-green hover:bg-white/90">
             <Phone className="w-5 h-5 mr-2" />
             Call Emergency Now

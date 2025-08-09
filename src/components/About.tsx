@@ -56,19 +56,19 @@ const About = () => {
             <div className="space-y-4">
               <div className="flex justify-between items-center p-3 bg-soft-gray rounded-lg">
                 <span className="font-medium">Established</span>
-                <span className="text-primary font-bold">2018</span>
+                <span className="text-primary font-bold">2024</span>
               </div>
               <div className="flex justify-between items-center p-3 bg-soft-gray rounded-lg">
                 <span className="font-medium">Beds</span>
-                <span className="text-primary font-bold">45</span>
+                <span className="text-primary font-bold">24</span>
               </div>
               <div className="flex justify-between items-center p-3 bg-soft-gray rounded-lg">
                 <span className="font-medium">Staff Members</span>
-                <span className="text-primary font-bold">120+</span>
+                <span className="text-primary font-bold">60+</span>
               </div>
               <div className="flex justify-between items-center p-3 bg-soft-gray rounded-lg">
                 <span className="font-medium">Patients Served</span>
-                <span className="text-primary font-bold">15,000+</span>
+                <span className="text-primary font-bold">100's</span>
               </div>
             </div>
           </div>
