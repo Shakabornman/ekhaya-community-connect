@@ -9,7 +9,7 @@ const Contact = () => {
       title: "Phone Numbers",
       details: [
         { label: "Emergency Line", value: "061 522 0536", urgent: true },
-        { label: "General Enquiries", value: "053 0500 0500", urgent: false },
+        { label: "General Enquiries", value: "053 050 0500", urgent: false },
         { label: "Appointments", value: "053 123 4569", urgent: false }
       ]
     },
@@ -44,11 +44,11 @@ const Contact = () => {
 
   const departments = [
     { name: "Emergency Department", hours: "24/7", phone: "061 522 0536" },
-    { name: "General Practice", hours: "Mon-Fri: 7AM-5PM", phone: "053 0500 0500" },
-    { name: "Maternity Ward", hours: "24/7", phone: "053 123 4570" },
-    { name: "Pharmacy", hours: "Mon-Fri: 8AM-5PM", phone: "053 123 4571" },
-    { name: "Laboratory", hours: "Mon-Fri: 7AM-4PM", phone: "053 123 4572" },
-    { name: "Administration", hours: "Mon-Fri: 8AM-4PM", phone: "053 123 4569" }
+    { name: "General Practice", hours: "Mon-Fri: 7AM-5PM", phone: "053 050 0500" },
+    { name: "Maternity Ward", hours: "24/7", phone: "053 050 0500" },
+    { name: "Pharmacy", hours: "Mon-Fri: 8AM-5PM", phone: "053 050 0500" },
+    { name: "Laboratory", hours: "Mon-Fri: 7AM-4PM", phone: "053 050 0500" },
+    { name: "Administration", hours: "Mon-Fri: 8AM-4PM", phone: "053 050 0500" }
   ];
 
   return (

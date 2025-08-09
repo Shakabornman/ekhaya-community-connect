@@ -93,7 +93,7 @@ const Hero = () => {
                 </div>
                 <div className="flex items-center justify-between p-4 bg-soft-gray rounded-lg">
                   <span className="font-medium">General Enquiries</span>
-                  <span className="text-lg font-bold text-primary">053 0500 0500</span>
+                  <span className="text-lg font-bold text-primary">053 050 0500</span>
                 </div>
               </div>
               
