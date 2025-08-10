@@ -17,16 +17,16 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 210 24% 16%;
 
-    --primary: 200 98% 39%;
+    --primary: 185 80% 35%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 155 60% 45%;
+    --secondary: 140 60% 45%;
     --secondary-foreground: 0 0% 98%;
 
     --muted: 200 20% 96%;
     --muted-foreground: 200 10% 40%;
 
-    --accent: 32 95% 44%;
+    --accent: 345 65% 35%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
@@ -34,26 +34,33 @@ All colors MUST be HSL.
 
     --border: 200 20% 90%;
     --input: 200 20% 90%;
-    --ring: 200 98% 39%;
+    --ring: 185 80% 35%;
 
     --radius: 0.75rem;
 
-    /* Custom design tokens */
-    --medical-blue: 200 98% 39%;
-    --medical-green: 155 60% 45%;
-    --warm-orange: 32 95% 44%;
+    /* Custom design tokens - Hospital@Ekhaya brand colors */
+    --hospital-maroon: 345 65% 35%;
+    --hospital-teal: 185 80% 35%;
+    --hospital-green: 140 60% 45%;
+    --hospital-red: 0 85% 55%;
+    --hospital-light-green: 75 55% 60%;
+    
+    /* Legacy medical colors updated to match brand */
+    --medical-blue: 185 80% 35%;
+    --medical-green: 140 60% 45%;
+    --warm-orange: 0 85% 55%;
     --soft-gray: 200 20% 96%;
-    --deep-blue: 200 100% 28%;
+    --deep-blue: 185 90% 25%;
     
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--medical-blue)), hsl(var(--deep-blue)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--hospital-teal)), hsl(var(--hospital-maroon)));
     --gradient-section: linear-gradient(180deg, hsl(var(--soft-gray)), hsl(var(--background)));
     --gradient-card: linear-gradient(145deg, hsl(var(--background)), hsl(var(--soft-gray)));
     
     /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(var(--medical-blue) / 0.1);
-    --shadow-card: 0 10px 40px -12px hsl(var(--medical-blue) / 0.15);
-    --shadow-elevated: 0 20px 60px -12px hsl(var(--medical-blue) / 0.25);
+    --shadow-soft: 0 4px 20px -4px hsl(var(--hospital-teal) / 0.1);
+    --shadow-card: 0 10px 40px -12px hsl(var(--hospital-teal) / 0.15);
+    --shadow-elevated: 0 20px 60px -12px hsl(var(--hospital-teal) / 0.25);
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -86,16 +93,16 @@ All colors MUST be HSL.
     --popover: 210 24% 10%;
     --popover-foreground: 200 20% 96%;
 
-    --primary: 200 98% 39%;
+    --primary: 185 80% 35%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 155 60% 45%;
+    --secondary: 140 60% 45%;
     --secondary-foreground: 0 0% 98%;
 
     --muted: 210 24% 14%;
     --muted-foreground: 200 10% 60%;
 
-    --accent: 32 95% 44%;
+    --accent: 345 65% 35%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -103,7 +110,7 @@ All colors MUST be HSL.
 
     --border: 210 24% 14%;
     --input: 210 24% 14%;
-    --ring: 200 98% 39%;
+    --ring: 185 80% 35%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;

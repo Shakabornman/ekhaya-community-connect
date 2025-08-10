@@ -52,6 +52,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				'hospital-maroon': 'hsl(var(--hospital-maroon))',
+				'hospital-teal': 'hsl(var(--hospital-teal))',
+				'hospital-green': 'hsl(var(--hospital-green))',
+				'hospital-red': 'hsl(var(--hospital-red))',
+				'hospital-light-green': 'hsl(var(--hospital-light-green))',
 				'medical-blue': 'hsl(var(--medical-blue))',
 				'medical-green': 'hsl(var(--medical-green))',
 				'warm-orange': 'hsl(var(--warm-orange))',

@@ -18,13 +18,15 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-hero rounded-full flex items-center justify-center">
-              <div className="w-4 h-4 bg-primary-foreground rounded-full"></div>
-            </div>
+          <div className="flex items-center space-x-3">
+            <img 
+              src="/lovable-uploads/d439926d-909f-41dd-85f4-9b485fd84371.png" 
+              alt="Hospital@Ekhaya Logo" 
+              className="h-10 w-auto"
+            />
             <div>
-              <h1 className="text-xl font-bold text-primary">Hospital@Ekhaya</h1>
-              <p className="text-xs text-muted-foreground">Your Home for Health</p>
+              <h1 className="text-xl font-bold text-hospital-teal">Hospital@Ekhaya</h1>
+              <p className="text-xs text-hospital-maroon font-medium">For the People by the People</p>
             </div>
           </div>
 
@@ -54,7 +56,7 @@ const Navigation = () => {
             >
               Contact
             </button>
-            <Button variant="default" className="bg-medical-green hover:bg-medical-green/90">
+            <Button variant="default" className="bg-hospital-red hover:bg-hospital-red/90">
               <Phone className="w-4 h-4 mr-2" />
               Emergency
             </Button>
@@ -101,7 +103,7 @@ const Navigation = () => {
                 Contact
               </button>
               <div className="px-3 py-2">
-                <Button variant="default" className="w-full bg-medical-green hover:bg-medical-green/90">
+                <Button variant="default" className="w-full bg-hospital-red hover:bg-hospital-red/90">
                   <Phone className="w-4 h-4 mr-2" />
                   Emergency: 053 123 4567
                 </Button>
