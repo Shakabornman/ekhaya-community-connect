@@ -10,7 +10,7 @@ const Contact = () => {
       details: [
         { label: "Emergency Line", value: "061 522 0536", urgent: true },
         { label: "General Enquiries", value: "053 050 0500", urgent: false },
-        { label: "Appointments", value: "053 123 4569", urgent: false }
+        { label: "Appointments", value: "053 050 0500", urgent: false }
       ]
     },
     {
