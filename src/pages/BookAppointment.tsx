@@ -111,6 +111,15 @@ const BookAppointment = () => {
       return;
     }
 
+    if (!profile.phone) {
+      toast({
+        title: "Phone Number Required",
+        description: "Please update your profile with a valid phone number before booking an appointment.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setLoading(true);
 
     try {
@@ -149,7 +158,11 @@ const BookAppointment = () => {
         description: "Appointment booked successfully! A confirmation email has been sent.",
       });
 
-      navigate("/");
+      // Clear form and stay on page for user to book another appointment if needed
+      setSelectedService("");
+      setSelectedDate(undefined);
+      setSelectedTime("");
+      setNotes("");
     } catch (error: any) {
       toast({
         title: "Error",
@@ -194,7 +207,9 @@ const BookAppointment = () => {
               </div>
               <div>
                 <Label>Phone</Label>
-                <p className="font-medium">{profile.phone}</p>
+                <p className={`font-medium ${!profile.phone ? 'text-destructive' : ''}`}>
+                  {profile.phone || "⚠️ Phone number required for appointments"}
+                </p>
               </div>
             </CardContent>
           </Card>
