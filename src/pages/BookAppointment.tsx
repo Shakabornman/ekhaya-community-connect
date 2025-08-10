@@ -207,9 +207,19 @@ const BookAppointment = () => {
               </div>
               <div>
                 <Label>Phone</Label>
-                <p className={`font-medium ${!profile.phone ? 'text-destructive' : ''}`}>
-                  {profile.phone || "⚠️ Phone number required for appointments"}
-                </p>
+                <div className="flex items-center justify-between">
+                  <p className={`font-medium ${!profile.phone ? 'text-destructive' : ''}`}>
+                    {profile.phone || "⚠️ Phone number required for appointments"}
+                  </p>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => navigate("/profile")}
+                    className="ml-2"
+                  >
+                    Edit Profile
+                  </Button>
+                </div>
               </div>
             </CardContent>
           </Card>
