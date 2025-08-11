@@ -21,6 +21,13 @@ const Auth = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Clear form data when component mounts to prevent caching
+    setEmail("");
+    setPassword("");
+    setFirstName("");
+    setLastName("");
+    setPhone("");
+    
     // Check for existing session
     supabase.auth.getSession().then(({ data: { session } }) => {
       setUser(session?.user ?? null);
@@ -104,6 +111,12 @@ const Auth = () => {
           title: "Success",
           description: "Please check your email to confirm your account!",
         });
+        // Clear form after successful signup
+        setEmail("");
+        setPassword("");
+        setFirstName("");
+        setLastName("");
+        setPhone("");
       }
     } catch (error: any) {
       toast({
