@@ -158,11 +158,8 @@ const BookAppointment = () => {
         description: "Appointment booked successfully! A confirmation email has been sent.",
       });
 
-      // Clear form and stay on page for user to book another appointment if needed
-      setSelectedService("");
-      setSelectedDate(undefined);
-      setSelectedTime("");
-      setNotes("");
+      // Navigate back to home page
+      navigate("/");
     } catch (error: any) {
       toast({
         title: "Error",

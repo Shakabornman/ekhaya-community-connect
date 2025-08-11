@@ -86,8 +86,8 @@ const Profile = () => {
         description: "Profile updated successfully!",
       });
 
-      // Refresh profile data
-      fetchProfile(user.id);
+      // Navigate to appointment booking page
+      navigate("/book-appointment");
     } catch (error: any) {
       toast({
         title: "Error",
