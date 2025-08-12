@@ -122,10 +122,10 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Patient email sent:", patientEmailResponse);
 
-    // Send notification email to hospital
+    // Send notification email to hospital (using verified email address for testing)
     const hospitalEmailResponse = await resend.emails.send({
       from: "Hospital Ekhaya <onboarding@resend.dev>",
-      to: ["info@hospitalekhaya.co.za"],
+      to: ["shakabornman@gmail.com"],
       subject: `New Appointment Booking - ${appointmentData.service}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
