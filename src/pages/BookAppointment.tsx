@@ -41,6 +41,13 @@ const BookAppointment = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Clear form fields on component mount to ensure fresh start
+    setSelectedService("");
+    setSelectedDate(undefined);
+    setSelectedTime("");
+    setNotes("");
+    setBookedSlots([]);
+
     // Check authentication
     supabase.auth.getSession().then(({ data: { session } }) => {
       if (!session?.user) {
