@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import Auth from "./pages/Auth";
 import BookAppointment from "./pages/BookAppointment";
 import Profile from "./pages/Profile";
+import Gallery from "./pages/Gallery";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/auth" element={<div><Auth /></div>} />
           <Route path="/book-appointment" element={<div><BookAppointment /></div>} />
           <Route path="/profile" element={<div><Profile /></div>} />
+          <Route path="/gallery" element={<Gallery />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -50,6 +50,12 @@ const Navigation = () => {
             >
               Services
             </button>
+            <a
+              href="/gallery"
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Gallery
+            </a>
             <button
               onClick={() => scrollToSection('contact')}
               className="text-foreground hover:text-primary transition-colors"
@@ -96,6 +102,12 @@ const Navigation = () => {
               >
                 Services
               </button>
+              <a
+                href="/gallery"
+                className="block px-3 py-2 text-foreground hover:text-primary hover:bg-muted rounded-md"
+              >
+                Gallery
+              </a>
               <button
                 onClick={() => scrollToSection('contact')}
                 className="block w-full text-left px-3 py-2 text-foreground hover:text-primary hover:bg-muted rounded-md"
