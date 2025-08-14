@@ -10,7 +10,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
 import { User } from "@supabase/supabase-js";
-import { CalendarDays, Clock, User as UserIcon } from "lucide-react";
+import { CalendarDays, Clock, User as UserIcon, Home } from "lucide-react";
 
 const services = [
   "General Practice",
@@ -195,6 +195,16 @@ const BookAppointment = () => {
   return (
     <div className="min-h-screen bg-gradient-subtle p-4">
       <div className="max-w-4xl mx-auto">
+        <div className="flex items-center justify-between mb-8">
+          <Button
+            onClick={() => navigate("/")}
+            variant="outline"
+            className="flex items-center gap-2"
+          >
+            <Home className="h-4 w-4" />
+            Home
+          </Button>
+        </div>
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-primary mb-2">Book an Appointment</h1>
           <p className="text-muted-foreground">Schedule your visit with Hospital Ekhaya</p>
