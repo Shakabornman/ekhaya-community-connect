@@ -45,11 +45,10 @@ const BookAppointment = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Check if user is logged in and pre-fill form if they have a profile
+    // Check if user is logged in but don't auto-populate form
     supabase.auth.getSession().then(({ data: { session } }) => {
       if (session?.user) {
         setUser(session.user);
-        fetchProfile(session.user.id);
       }
     });
 
@@ -57,7 +56,6 @@ const BookAppointment = () => {
       (event, session) => {
         if (session?.user) {
           setUser(session.user);
-          fetchProfile(session.user.id);
         } else {
           setUser(null);
         }
@@ -67,11 +65,13 @@ const BookAppointment = () => {
     return () => subscription.unsubscribe();
   }, []);
 
-  const fetchProfile = async (userId: string) => {
+  const loadProfileData = async () => {
+    if (!user) return;
+    
     const { data, error } = await supabase
       .from("profiles")
       .select("*")
-      .eq("user_id", userId)
+      .eq("user_id", user.id)
       .maybeSingle();
 
     if (!error && data) {
@@ -222,6 +222,17 @@ const BookAppointment = () => {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
+              {user && (
+                <div className="mb-4">
+                  <Button 
+                    variant="outline" 
+                    onClick={loadProfileData}
+                    className="w-full"
+                  >
+                    Load My Profile Information
+                  </Button>
+                </div>
+              )}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="firstName">First Name *</Label>
