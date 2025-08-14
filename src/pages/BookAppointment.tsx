@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Calendar } from "@/components/ui/calendar";
 import { Textarea } from "@/components/ui/textarea";
+import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
@@ -30,7 +31,10 @@ const timeSlots = [
 
 const BookAppointment = () => {
   const [user, setUser] = useState<User | null>(null);
-  const [profile, setProfile] = useState<any>(null);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [selectedService, setSelectedService] = useState("");
   const [selectedDate, setSelectedDate] = useState<Date>();
   const [selectedTime, setSelectedTime] = useState("");
@@ -41,48 +45,40 @@ const BookAppointment = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Clear form fields on component mount to ensure fresh start
-    setSelectedService("");
-    setSelectedDate(undefined);
-    setSelectedTime("");
-    setNotes("");
-    setBookedSlots([]);
-
-    // Check authentication
+    // Check if user is logged in and pre-fill form if they have a profile
     supabase.auth.getSession().then(({ data: { session } }) => {
-      if (!session?.user) {
-        navigate("/auth");
-        return;
+      if (session?.user) {
+        setUser(session.user);
+        fetchProfile(session.user.id);
       }
-      setUser(session.user);
-      fetchProfile(session.user.id);
     });
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (event, session) => {
-        if (!session?.user) {
-          navigate("/auth");
-          return;
+        if (session?.user) {
+          setUser(session.user);
+          fetchProfile(session.user.id);
+        } else {
+          setUser(null);
         }
-        setUser(session.user);
-        fetchProfile(session.user.id);
       }
     );
 
     return () => subscription.unsubscribe();
-  }, [navigate]);
+  }, []);
 
   const fetchProfile = async (userId: string) => {
     const { data, error } = await supabase
       .from("profiles")
       .select("*")
       .eq("user_id", userId)
-      .single();
+      .maybeSingle();
 
-    if (error) {
-      console.error("Error fetching profile:", error);
-    } else {
-      setProfile(data);
+    if (!error && data) {
+      setFirstName(data.first_name || "");
+      setLastName(data.last_name || "");
+      setEmail(data.email || "");
+      setPhone(data.phone || "");
     }
   };
 
@@ -109,7 +105,7 @@ const BookAppointment = () => {
   }, [selectedDate, selectedService]);
 
   const handleBookAppointment = async () => {
-    if (!user || !profile || !selectedService || !selectedDate || !selectedTime) {
+    if (!firstName.trim() || !lastName.trim() || !email.trim() || !phone.trim() || !selectedService || !selectedDate || !selectedTime) {
       toast({
         title: "Error",
         description: "Please fill in all required fields",
@@ -118,10 +114,12 @@ const BookAppointment = () => {
       return;
     }
 
-    if (!profile.phone) {
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
       toast({
-        title: "Phone Number Required",
-        description: "Please update your profile with a valid phone number before booking an appointment.",
+        title: "Invalid Email",
+        description: "Please enter a valid email address",
         variant: "destructive",
       });
       return;
@@ -131,14 +129,14 @@ const BookAppointment = () => {
 
     try {
       const appointmentData = {
-        user_id: user.id,
-        patient_name: `${profile.first_name} ${profile.last_name}`,
-        patient_email: profile.email,
-        patient_phone: profile.phone,
+        user_id: user?.id || null,
+        patient_name: `${firstName.trim()} ${lastName.trim()}`,
+        patient_email: email.trim(),
+        patient_phone: phone.trim(),
         service: selectedService,
         appointment_date: selectedDate.toISOString().split('T')[0],
         appointment_time: selectedTime,
-        notes: notes,
+        notes: notes.trim(),
         status: "pending"
       };
 
@@ -166,6 +164,10 @@ const BookAppointment = () => {
       });
 
       // Clear form fields after successful booking
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setPhone("");
       setSelectedService("");
       setSelectedDate(undefined);
       setSelectedTime("");
@@ -185,11 +187,10 @@ const BookAppointment = () => {
     }
   };
 
-  if (!user || !profile) {
-    return <div>Loading...</div>;
-  }
-
   const availableSlots = timeSlots.filter(slot => !bookedSlots.includes(slot));
+  
+  // Check if all required fields are filled for showing time slots
+  const isFormValid = firstName.trim() && lastName.trim() && email.trim() && phone.trim() && selectedService && selectedDate;
 
   return (
     <div className="min-h-screen bg-gradient-subtle p-4">
@@ -206,31 +207,56 @@ const BookAppointment = () => {
                 <UserIcon className="h-5 w-5" />
                 Patient Information
               </CardTitle>
+              <CardDescription>
+                Please fill in all required fields to book your appointment
+              </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div>
-                <Label>Name</Label>
-                <p className="font-medium">{profile.first_name} {profile.last_name}</p>
-              </div>
-              <div>
-                <Label>Email</Label>
-                <p className="font-medium">{profile.email}</p>
-              </div>
-              <div>
-                <Label>Phone</Label>
-                <div className="flex items-center justify-between">
-                  <p className={`font-medium ${!profile.phone ? 'text-destructive' : ''}`}>
-                    {profile.phone || "⚠️ Phone number required for appointments"}
-                  </p>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => navigate("/profile")}
-                    className="ml-2"
-                  >
-                    Edit Profile
-                  </Button>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="firstName">First Name *</Label>
+                  <Input
+                    id="firstName"
+                    type="text"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    placeholder="Enter your first name"
+                    required
+                  />
                 </div>
+                <div>
+                  <Label htmlFor="lastName">Last Name *</Label>
+                  <Input
+                    id="lastName"
+                    type="text"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    placeholder="Enter your last name"
+                    required
+                  />
+                </div>
+              </div>
+              <div>
+                <Label htmlFor="email">Email Address *</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email address"
+                  required
+                />
+              </div>
+              <div>
+                <Label htmlFor="phone">Phone Number *</Label>
+                <Input
+                  id="phone"
+                  type="tel"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  placeholder="Enter your phone number"
+                  required
+                />
               </div>
             </CardContent>
           </Card>
@@ -273,7 +299,7 @@ const BookAppointment = () => {
           </Card>
         </div>
 
-        {selectedDate && selectedService && (
+        {isFormValid && (
           <Card className="mt-6">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -281,42 +307,60 @@ const BookAppointment = () => {
                 Available Time Slots
               </CardTitle>
               <CardDescription>
-                Showing available slots for {selectedDate.toLocaleDateString()} - {selectedService}
+                Showing available slots for {selectedDate!.toLocaleDateString()} - {selectedService}
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3 mb-6">
-                {availableSlots.map((slot) => (
-                  <Button
-                    key={slot}
-                    variant={selectedTime === slot ? "default" : "outline"}
-                    onClick={() => setSelectedTime(slot)}
-                    className="h-12"
-                  >
-                    {slot}
-                  </Button>
-                ))}
-              </div>
+              {availableSlots.length > 0 ? (
+                <>
+                  <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3 mb-6">
+                    {availableSlots.map((slot) => (
+                      <Button
+                        key={slot}
+                        variant={selectedTime === slot ? "default" : "outline"}
+                        onClick={() => setSelectedTime(slot)}
+                        className="h-12"
+                      >
+                        {slot}
+                      </Button>
+                    ))}
+                  </div>
 
-              <div className="space-y-4">
-                <div>
-                  <Label htmlFor="notes">Additional Notes (Optional)</Label>
-                  <Textarea
-                    id="notes"
-                    placeholder="Any additional information or special requests..."
-                    value={notes}
-                    onChange={(e) => setNotes(e.target.value)}
-                  />
-                </div>
+                  <div className="space-y-4">
+                    <div>
+                      <Label htmlFor="notes">Additional Notes (Optional)</Label>
+                      <Textarea
+                        id="notes"
+                        placeholder="Any additional information or special requests..."
+                        value={notes}
+                        onChange={(e) => setNotes(e.target.value)}
+                      />
+                    </div>
 
-                <Button
-                  onClick={handleBookAppointment}
-                  disabled={loading || !selectedTime}
-                  className="w-full h-12 text-lg"
-                >
-                  {loading ? "Booking..." : "Book Appointment"}
-                </Button>
-              </div>
+                    <Button
+                      onClick={handleBookAppointment}
+                      disabled={loading || !selectedTime}
+                      className="w-full h-12 text-lg"
+                    >
+                      {loading ? "Booking..." : "Book Appointment"}
+                    </Button>
+                  </div>
+                </>
+              ) : (
+                <p className="text-center text-muted-foreground py-8">
+                  No available time slots for the selected date and service. Please choose a different date.
+                </p>
+              )}
+            </CardContent>
+          </Card>
+        )}
+
+        {!isFormValid && (selectedDate || selectedService) && (
+          <Card className="mt-6">
+            <CardContent className="py-8">
+              <p className="text-center text-muted-foreground">
+                Please fill in all required patient information fields above to view available time slots.
+              </p>
             </CardContent>
           </Card>
         )}
