@@ -9,6 +9,7 @@ import Auth from "./pages/Auth";
 import BookAppointment from "./pages/BookAppointment";
 import Profile from "./pages/Profile";
 import Gallery from "./pages/Gallery";
+import FloatingQR from "./components/FloatingQR";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <FloatingQR />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
