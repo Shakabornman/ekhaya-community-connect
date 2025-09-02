@@ -28,8 +28,12 @@ const Gallery = () => {
       id: 2,
       title: "Medical Team",
       category: "staff",
-      thumbnail: "/src/assets/medical-services.jpg",
+      thumbnail: "/lovable-uploads/6c9b4617-392a-420d-8ba2-dea8363ea5cc.png",
       images: [
+        "/lovable-uploads/6c9b4617-392a-420d-8ba2-dea8363ea5cc.png",
+        "/lovable-uploads/39278333-397a-417c-9540-9432f87eb8a9.png",
+        "/lovable-uploads/bea3f366-5a40-48d0-ace3-c8efce80d6d5.png",
+        "/lovable-uploads/cdbf0a5b-44b1-42fc-a451-60bde09ed1ff.png",
         "/src/assets/medical-services.jpg",
         "/lovable-uploads/d439926d-909f-41dd-85f4-9b485fd84371.png",
         "/src/assets/hospital-hero.jpg"
