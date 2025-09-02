@@ -27,7 +27,7 @@ const Gallery = () => {
     },
     {
       id: 2,
-      title: "Medical Team",
+      title: "Our Team",
       category: "staff",
       thumbnail: "/lovable-uploads/6c9b4617-392a-420d-8ba2-dea8363ea5cc.png",
       images: [
@@ -78,7 +78,7 @@ const Gallery = () => {
   const categories = [
     { id: "all", label: "All Photos", icon: Camera },
     { id: "patient-care", label: "Patient Care", icon: Heart },
-    { id: "staff", label: "Medical Team", icon: Users },
+    { id: "staff", label: "Our Team", icon: Users },
     { id: "facilities", label: "Facilities", icon: Building2 },
     { id: "community", label: "Community", icon: Users }
   ];
