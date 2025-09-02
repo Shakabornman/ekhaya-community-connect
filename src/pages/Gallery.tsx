@@ -16,12 +16,9 @@ const Gallery = () => {
       id: 1,
       title: "Patient Care Excellence",
       category: "patient-care",
-      thumbnail: "/lovable-uploads/d439926d-909f-41dd-85f4-9b485fd84371.png",
+      thumbnail: "/lovable-uploads/f32d770f-1bb9-49ce-ad42-f338e451a70f.png",
       images: [
-        "/lovable-uploads/d439926d-909f-41dd-85f4-9b485fd84371.png",
-        "/lovable-uploads/f32d770f-1bb9-49ce-ad42-f338e451a70f.png",
-        "/src/assets/medical-services.jpg",
-        "/src/assets/hospital-hero.jpg"
+        "/lovable-uploads/f32d770f-1bb9-49ce-ad42-f338e451a70f.png"
       ],
       description: "Dedicated moments of compassionate patient care"
     },
