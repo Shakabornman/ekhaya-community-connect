@@ -56,8 +56,16 @@ const Gallery = () => {
       id: 4,
       title: "Community Outreach",
       category: "community",
-      thumbnail: "/lovable-uploads/d439926d-909f-41dd-85f4-9b485fd84371.png",
+      thumbnail: "/lovable-uploads/68dcc8ad-dbdd-483a-adcc-c81069e0e00a.png",
       images: [
+        "/lovable-uploads/68dcc8ad-dbdd-483a-adcc-c81069e0e00a.png",
+        "/lovable-uploads/66d2b633-f5a8-49d3-806f-0d16735ad6c0.png",
+        "/lovable-uploads/d8c24b5d-f672-4273-b898-f6e4388dcc9f.png",
+        "/lovable-uploads/d1800c54-f0ca-4af0-bbe6-042551c09430.png",
+        "/lovable-uploads/89cb1f9f-1f2c-4c74-8bac-15b88c5ae131.png",
+        "/lovable-uploads/dfe95aab-67b0-4dc3-b83b-30ecfc10164c.png",
+        "/lovable-uploads/43cf1435-664c-4e24-b9d3-003534219e5d.png",
+        "/lovable-uploads/b1f454d7-d81c-4783-a563-c5ec35930631.png",
         "/lovable-uploads/d439926d-909f-41dd-85f4-9b485fd84371.png",
         "/src/assets/hospital-hero.jpg",
         "/src/assets/medical-services.jpg"
