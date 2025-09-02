@@ -19,6 +19,7 @@ const Gallery = () => {
       thumbnail: "/lovable-uploads/d439926d-909f-41dd-85f4-9b485fd84371.png",
       images: [
         "/lovable-uploads/d439926d-909f-41dd-85f4-9b485fd84371.png",
+        "/lovable-uploads/f32d770f-1bb9-49ce-ad42-f338e451a70f.png",
         "/src/assets/medical-services.jpg",
         "/src/assets/hospital-hero.jpg"
       ],
