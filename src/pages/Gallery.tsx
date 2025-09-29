@@ -178,15 +178,16 @@ const Gallery = () => {
                         <h2 className="text-2xl font-bold">{album.title}</h2>
                         <p className="text-muted-foreground">{album.description}</p>
                       </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-h-96 overflow-y-auto">
+                      <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 max-h-96 overflow-y-auto">
                         {album.images.map((image, index) => (
-                          <div key={index} className="relative group aspect-[4/3] overflow-hidden rounded-lg">
+                          <div key={index} className="mb-4 break-inside-avoid rounded-lg overflow-hidden relative group">
                             <img
                               src={image}
                               alt={`${album.title} ${index + 1}`}
-                              className="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-200"
+                              loading="lazy"
+                              className="w-full h-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
                             />
-                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-200" />
+                            <div className="pointer-events-none absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-200" />
                           </div>
                         ))}
                       </div>
