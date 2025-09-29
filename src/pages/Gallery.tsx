@@ -149,12 +149,12 @@ const Gallery = () => {
                   <DialogTrigger asChild>
                     <Card className="cursor-pointer hover:shadow-lg transition-all duration-300 group">
                       <CardContent className="p-0">
-                        <div className="relative overflow-hidden rounded-t-lg">
-                          <img
-                            src={album.thumbnail}
-                            alt={album.title}
-                            className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                          />
+                          <div className="relative overflow-hidden rounded-t-lg aspect-[4/3]">
+                            <img
+                              src={album.thumbnail}
+                              alt={album.title}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                           <Badge className="absolute top-4 left-4">
                             {album.images.length} Photos
@@ -180,12 +180,13 @@ const Gallery = () => {
                       </div>
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-h-96 overflow-y-auto">
                         {album.images.map((image, index) => (
-                          <div key={index} className="relative group">
+                          <div key={index} className="relative group aspect-[4/3] overflow-hidden rounded-lg">
                             <img
                               src={image}
                               alt={`${album.title} ${index + 1}`}
-                              className="w-full h-32 object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-200"
+                              className="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-200"
                             />
+                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-200" />
                           </div>
                         ))}
                       </div>
