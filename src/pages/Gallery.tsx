@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Camera, Users, Heart, Building2 } from "lucide-react";
+import { Camera, Users, Heart, Building2, Calendar } from "lucide-react";
 
 const Gallery = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -69,6 +69,24 @@ const Gallery = () => {
         "/src/assets/medical-services.jpg"
       ],
       description: "Community health programs and outreach initiatives"
+    },
+    {
+      id: 5,
+      title: "Heritage Day",
+      category: "heritage-day",
+      thumbnail: "/lovable-uploads/heritage-day-1.jpg",
+      images: [
+        "/lovable-uploads/heritage-day-1.jpg",
+        "/lovable-uploads/heritage-day-2.jpg",
+        "/lovable-uploads/heritage-day-3.jpg",
+        "/lovable-uploads/heritage-day-4.jpg",
+        "/lovable-uploads/heritage-day-5.jpg",
+        "/lovable-uploads/heritage-day-6.jpg",
+        "/lovable-uploads/heritage-day-7.jpg",
+        "/lovable-uploads/heritage-day-8.jpg",
+        "/lovable-uploads/heritage-day-9.jpg"
+      ],
+      description: "Celebrating our cultural heritage and traditions"
     }
   ];
 
@@ -77,7 +95,8 @@ const Gallery = () => {
     { id: "patient-care", label: "Patient Care", icon: Heart },
     { id: "staff", label: "Our Team", icon: Users },
     { id: "facilities", label: "Facilities", icon: Building2 },
-    { id: "community", label: "Community", icon: Users }
+    { id: "community", label: "Community", icon: Users },
+    { id: "heritage-day", label: "Heritage Day", icon: Calendar }
   ];
 
   const filteredAlbums = selectedCategory === "all" 
@@ -106,7 +125,7 @@ const Gallery = () => {
         <section className="py-16 px-4">
           <div className="container mx-auto max-w-6xl">
             <Tabs value={selectedCategory} onValueChange={setSelectedCategory} className="mb-12">
-              <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 mb-8">
+              <TabsList className="grid w-full grid-cols-2 md:grid-cols-6 mb-8">
                 {categories.map((category) => {
                   const Icon = category.icon;
                   return (
