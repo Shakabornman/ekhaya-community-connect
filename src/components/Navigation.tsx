@@ -35,7 +35,7 @@ const Navigation = () => {
             />
             <div>
               <h1 className="text-xl font-bold text-hospital-teal">Hospital@Ekhaya</h1>
-              <p className="text-xs text-hospital-maroon font-medium">For the People by the People</p>
+              <p className="text-xs text-hospital-maroon font-medium">By the People</p>
             </div>
           </div>
 
