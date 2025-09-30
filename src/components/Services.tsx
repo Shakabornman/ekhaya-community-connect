@@ -115,22 +115,22 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-background">
+    <section id="services" className="py-12 sm:py-16 lg:py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl font-bold text-primary mb-6">Our Medical Services</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+        <div className="text-center mb-10 sm:mb-12 lg:mb-16 animate-fade-in">
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4 sm:mb-6">Our Medical Services</h2>
+          <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Hospital@Ekhaya provides comprehensive healthcare services to meet the diverse medical needs 
             of our community. From emergency care to specialized treatments, we're here for you.
           </p>
         </div>
 
         {/* Featured Services Section */}
-        <div className="bg-white rounded-2xl p-8 mb-16 shadow-card animate-slide-up">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
+        <div className="bg-white rounded-2xl p-6 sm:p-8 mb-10 sm:mb-12 lg:mb-16 shadow-card animate-slide-up">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center">
             <div>
-              <h3 className="text-3xl font-bold text-primary mb-6">Quality Care When You Need It</h3>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+              <h3 className="text-2xl sm:text-3xl font-bold text-primary mb-4 sm:mb-6">Quality Care When You Need It</h3>
+              <p className="text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6 leading-relaxed">
                 Our hospital is equipped with modern medical equipment and staffed by qualified healthcare 
                 professionals who are dedicated to providing the best possible care for our patients.
               </p>
@@ -186,13 +186,13 @@ const Services = () => {
         </div>
 
         {/* Emergency Services Highlight */}
-        <div className="mt-16 bg-gradient-hero rounded-2xl p-8 text-white text-center animate-fade-in">
-          <Siren className="w-16 h-16 mx-auto mb-4 animate-pulse-gentle" />
-          <h3 className="text-3xl font-bold mb-4">Emergency Services Available 24/7</h3>
-          <p className="text-xl mb-6 text-white/90">
+        <div className="mt-10 sm:mt-12 lg:mt-16 bg-gradient-hero rounded-2xl p-6 sm:p-8 text-white text-center animate-fade-in">
+          <Siren className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 animate-pulse-gentle" />
+          <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Emergency Services Available 24/7</h3>
+          <p className="text-base sm:text-lg lg:text-xl mb-4 sm:mb-6 text-white/90">
             Our emergency department is always ready to provide immediate medical care when you need it most.
           </p>
-          <div className="text-3xl font-bold">
+          <div className="text-2xl sm:text-3xl font-bold">
             Emergency Hotline: 061 522 0536
           </div>
         </div>

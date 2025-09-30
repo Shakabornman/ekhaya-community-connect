@@ -12,7 +12,7 @@ const Footer = () => {
     <footer className="bg-primary text-primary-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="py-12 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="py-8 sm:py-10 lg:py-12 grid md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Hospital Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
@@ -100,11 +100,11 @@ const Footer = () => {
         </div>
 
         {/* Emergency Banner */}
-        <div className="border-t border-primary-foreground/20 py-6">
-          <div className="bg-medical-green/20 rounded-lg p-4 text-center">
-            <p className="text-lg font-bold mb-2">Medical Emergency? Call Now!</p>
-            <p className="text-2xl font-bold text-warm-orange">061 522 0536</p>
-            <p className="text-sm text-primary-foreground/80 mt-1">Available 24 hours a day, 7 days a week</p>
+        <div className="border-t border-primary-foreground/20 py-4 sm:py-6">
+          <div className="bg-medical-green/20 rounded-lg p-4 sm:p-6 text-center">
+            <p className="text-base sm:text-lg font-bold mb-2">Medical Emergency? Call Now!</p>
+            <p className="text-xl sm:text-2xl font-bold text-warm-orange">061 522 0536</p>
+            <p className="text-xs sm:text-sm text-primary-foreground/80 mt-1">Available 24 hours a day, 7 days a week</p>
           </div>
         </div>
 

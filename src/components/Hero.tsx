@@ -24,38 +24,38 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="text-white animate-fade-in">
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
               Welcome to<br />
               <span className="bg-gradient-to-r from-warm-orange to-medical-green bg-clip-text text-transparent">
                 Hospital@Ekhaya
               </span>
             </h1>
-            <p className="text-xl mb-8 text-white/90 leading-relaxed">
+            <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 text-white/90 leading-relaxed">
               Your home for quality healthcare in Galeshewe, Kimberley. 
               We provide compassionate, professional medical care for our community.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
               <Button
                 size="lg"
-                className="bg-warm-orange hover:bg-warm-orange/90 text-white shadow-elevated"
+                className="bg-warm-orange hover:bg-warm-orange/90 text-white shadow-elevated min-h-[48px] text-base"
                 onClick={() => window.location.href = '/book-appointment'}
               >
                 Book Appointment
               </Button>
               <Button
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-white shadow-elevated"
+                className="bg-primary hover:bg-primary/90 text-white shadow-elevated min-h-[48px] text-base"
                 onClick={() => scrollToSection('services')}
               >
                 Our Services
               </Button>
               <Button
                 size="lg"
-                className="bg-white text-primary shadow-elevated"
+                className="bg-white text-primary shadow-elevated min-h-[48px] text-base hover:bg-white/90"
                 onClick={() => scrollToSection('contact')}
               >
                 Contact Us
@@ -63,27 +63,27 @@ const Hero = () => {
             </div>
 
             {/* Quick Info Cards */}
-            <div className="grid sm:grid-cols-3 gap-4">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                <Phone className="w-6 h-6 text-warm-orange mb-2" />
-                <p className="text-sm font-medium">Emergency</p>
-                <p className="text-lg font-bold">061 522 0536</p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4 border border-white/20">
+                <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-warm-orange mb-2" />
+                <p className="text-xs sm:text-sm font-medium">Emergency</p>
+                <p className="text-base sm:text-lg font-bold">061 522 0536</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                <Clock className="w-6 h-6 text-medical-green mb-2" />
-                <p className="text-sm font-medium">Open 24/7</p>
-                <p className="text-lg font-bold">Emergency Care</p>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4 border border-white/20">
+                <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-medical-green mb-2" />
+                <p className="text-xs sm:text-sm font-medium">Open 24/7</p>
+                <p className="text-base sm:text-lg font-bold">Emergency Care</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                <MapPin className="w-6 h-6 text-warm-orange mb-2" />
-                <p className="text-sm font-medium">Location</p>
-                <p className="text-lg font-bold">Galeshewe</p>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4 border border-white/20">
+                <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-warm-orange mb-2" />
+                <p className="text-xs sm:text-sm font-medium">Location</p>
+                <p className="text-base sm:text-lg font-bold">Galeshewe</p>
               </div>
             </div>
           </div>
 
-          {/* Emergency Contact Card */}
-          <div className="lg:justify-self-end animate-slide-up">
+          {/* Emergency Contact Card - Hidden on mobile, shown on lg+ */}
+          <div className="hidden lg:block lg:justify-self-end animate-slide-up">
             <div className="bg-white rounded-2xl p-8 shadow-elevated max-w-md">
               <div className="text-center mb-6">
                 <div className="w-16 h-16 bg-gradient-hero rounded-full flex items-center justify-center mx-auto mb-4">
@@ -104,7 +104,7 @@ const Hero = () => {
                 </div>
               </div>
               
-              <Button className="w-full mt-6 bg-medical-green hover:bg-medical-green/90">
+              <Button className="w-full mt-6 bg-medical-green hover:bg-medical-green/90 min-h-[48px]">
                 <Phone className="w-4 h-4 mr-2" />
                 Call Emergency Now
               </Button>

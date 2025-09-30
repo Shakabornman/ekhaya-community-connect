@@ -26,21 +26,21 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-section">
+    <section id="about" className="py-12 sm:py-16 lg:py-20 bg-gradient-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl font-bold text-primary mb-6">About Hospital@Ekhaya</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+        <div className="text-center mb-10 sm:mb-12 lg:mb-16 animate-fade-in">
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4 sm:mb-6">About Hospital@Ekhaya</h2>
+          <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             "Ekhaya" means "home" in isiZulu and isiXhosa - and that's exactly what we are: 
             your home for healthcare in Galeshewe, Kimberley. We provide quality medical services 
             with the warmth and care of family.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center mb-10 sm:mb-12 lg:mb-16">
           <div className="animate-slide-up">
-            <h3 className="text-3xl font-bold text-primary mb-6">Our Mission</h3>
-            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+            <h3 className="text-2xl sm:text-3xl font-bold text-primary mb-4 sm:mb-6">Our Mission</h3>
+            <p className="text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6 leading-relaxed">
               To provide accessible, quality healthcare services to the residents of Galeshewe and 
               surrounding areas, with a focus on preventive care, community health education, and 
               compassionate treatment for all.
