@@ -193,24 +193,24 @@ const BookAppointment = () => {
   const isFormValid = firstName.trim() && lastName.trim() && email.trim() && phone.trim() && selectedService && selectedDate;
 
   return (
-    <div className="min-h-screen bg-gradient-subtle p-4">
+    <div className="min-h-screen bg-gradient-subtle p-3 sm:p-4 lg:p-6">
       <div className="max-w-4xl mx-auto">
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center justify-between mb-6 sm:mb-8">
           <Button
             onClick={() => navigate("/")}
             variant="outline"
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 min-h-[44px]"
           >
             <Home className="h-4 w-4" />
             Home
           </Button>
         </div>
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-primary mb-2">Book an Appointment</h1>
-          <p className="text-muted-foreground">Schedule your visit with Hospital Ekhaya</p>
+        <div className="text-center mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-2">Book an Appointment</h1>
+          <p className="text-sm sm:text-base text-muted-foreground">Schedule your visit with Hospital Ekhaya</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -233,7 +233,7 @@ const BookAppointment = () => {
                   </Button>
                 </div>
               )}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div>
                   <Label htmlFor="firstName">First Name *</Label>
                   <Input
@@ -334,20 +334,20 @@ const BookAppointment = () => {
             <CardContent>
               {availableSlots.length > 0 ? (
                 <>
-                  <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3 mb-6">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-2 sm:gap-3 mb-4 sm:mb-6">
                     {availableSlots.map((slot) => (
                       <Button
                         key={slot}
                         variant={selectedTime === slot ? "default" : "outline"}
                         onClick={() => setSelectedTime(slot)}
-                        className="h-12"
+                        className="h-10 sm:h-12 text-sm sm:text-base"
                       >
                         {slot}
                       </Button>
                     ))}
                   </div>
 
-                  <div className="space-y-4">
+                  <div className="space-y-3 sm:space-y-4">
                     <div>
                       <Label htmlFor="notes">Additional Notes (Optional)</Label>
                       <Textarea
@@ -361,7 +361,7 @@ const BookAppointment = () => {
                     <Button
                       onClick={handleBookAppointment}
                       disabled={loading || !selectedTime}
-                      className="w-full h-12 text-lg"
+                      className="w-full min-h-[48px] text-base sm:text-lg"
                     >
                       {loading ? "Booking..." : "Book Appointment"}
                     </Button>

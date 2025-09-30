@@ -107,14 +107,14 @@ const Gallery = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      <main className="pt-20">
+      <main className="pt-16 sm:pt-20">
         {/* Hero Section */}
-        <section className="py-16 px-4 text-center bg-gradient-to-b from-primary/5 to-background">
+        <section className="py-10 sm:py-12 lg:py-16 px-4 text-center bg-gradient-to-b from-primary/5 to-background">
           <div className="container mx-auto max-w-6xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-4 sm:mb-6">
               Photo Gallery
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
               Explore our collection of memorable moments, showcasing our commitment to healthcare excellence
               and community service.
             </p>
@@ -122,20 +122,21 @@ const Gallery = () => {
         </section>
 
         {/* Gallery Content */}
-        <section className="py-16 px-4">
+        <section className="py-10 sm:py-12 lg:py-16 px-4">
           <div className="container mx-auto max-w-6xl">
-            <Tabs value={selectedCategory} onValueChange={setSelectedCategory} className="mb-12">
-              <TabsList className="grid w-full grid-cols-2 md:grid-cols-6 mb-8">
+            <Tabs value={selectedCategory} onValueChange={setSelectedCategory} className="mb-8 sm:mb-10 lg:mb-12">
+              <TabsList className="grid w-full grid-cols-3 sm:grid-cols-3 lg:grid-cols-6 gap-1 sm:gap-2 h-auto">
                 {categories.map((category) => {
                   const Icon = category.icon;
                   return (
                     <TabsTrigger
                       key={category.id}
                       value={category.id}
-                      className="flex items-center gap-2"
+                      className="flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm py-2 sm:py-2.5"
                     >
-                      <Icon className="w-4 h-4" />
+                      <Icon className="w-3 h-3 sm:w-4 sm:h-4" />
                       <span className="hidden sm:inline">{category.label}</span>
+                      <span className="sm:hidden">{category.id === "all" ? "All" : category.id === "patient-care" ? "Care" : category.id === "heritage-day" ? "Heritage" : category.label}</span>
                     </TabsTrigger>
                   );
                 })}
@@ -143,7 +144,7 @@ const Gallery = () => {
             </Tabs>
 
             {/* Albums Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
               {filteredAlbums.map((album) => (
                 <Dialog key={album.id}>
                   <DialogTrigger asChild>
@@ -154,17 +155,18 @@ const Gallery = () => {
                               src={album.thumbnail}
                               alt={album.title}
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                              loading="lazy"
                             />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                           <Badge className="absolute top-4 left-4">
                             {album.images.length} Photos
                           </Badge>
                         </div>
-                        <div className="p-6">
-                          <h3 className="text-xl font-semibold text-card-foreground mb-2">
+                        <div className="p-4 sm:p-6">
+                          <h3 className="text-lg sm:text-xl font-semibold text-card-foreground mb-2">
                             {album.title}
                           </h3>
-                          <p className="text-muted-foreground text-sm">
+                          <p className="text-muted-foreground text-xs sm:text-sm">
                             {album.description}
                           </p>
                         </div>
@@ -172,15 +174,15 @@ const Gallery = () => {
                     </Card>
                   </DialogTrigger>
                   
-                  <DialogContent className="max-w-4xl w-full">
+                  <DialogContent className="max-w-[95vw] sm:max-w-4xl w-full max-h-[90vh] overflow-y-auto">
                     <div className="space-y-4">
                       <div>
-                        <h2 className="text-2xl font-bold">{album.title}</h2>
-                        <p className="text-muted-foreground">{album.description}</p>
+                        <h2 className="text-xl sm:text-2xl font-bold">{album.title}</h2>
+                        <p className="text-sm sm:text-base text-muted-foreground">{album.description}</p>
                       </div>
-                      <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 max-h-96 overflow-y-auto">
+                      <div className="columns-1 sm:columns-2 lg:columns-3 gap-3 sm:gap-4 max-h-[60vh] overflow-y-auto">
                         {album.images.map((image, index) => (
-                          <div key={index} className="mb-4 break-inside-avoid rounded-lg overflow-hidden relative group">
+                          <div key={index} className="mb-3 sm:mb-4 break-inside-avoid rounded-lg overflow-hidden relative group">
                             <img
                               src={image}
                               alt={`${album.title} ${index + 1}`}
@@ -212,15 +214,15 @@ const Gallery = () => {
         </section>
 
         {/* Call to Action */}
-        <section className="py-16 px-4 bg-primary/5">
+        <section className="py-10 sm:py-12 lg:py-16 px-4 bg-primary/5">
           <div className="container mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl font-bold text-primary mb-6">
+            <h2 className="text-2xl sm:text-3xl font-bold text-primary mb-4 sm:mb-6">
               Experience Excellence in Healthcare
             </h2>
-            <p className="text-muted-foreground mb-8 text-lg">
+            <p className="text-muted-foreground mb-6 sm:mb-8 text-base sm:text-lg">
               See the difference our dedicated team makes in patient care and community health.
             </p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 min-h-[48px]">
               Book Your Appointment
             </Button>
           </div>

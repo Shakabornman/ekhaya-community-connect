@@ -19,6 +19,7 @@ const Hero = () => {
           src={heroImage}
           alt="Hospital@Ekhaya community hospital exterior"
           className="w-full h-full object-cover"
+          loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-medical-blue/90 via-medical-blue/70 to-transparent"></div>
       </div>

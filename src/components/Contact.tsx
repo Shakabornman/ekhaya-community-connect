@@ -63,7 +63,7 @@ const Contact = () => {
         </div>
 
         {/* Main Contact Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-10 sm:mb-12 lg:mb-16">
           {contactInfo.map((contact, index) => (
             <Card key={index} className="bg-white border-0 shadow-card hover:shadow-elevated transition-all duration-300 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
               <CardHeader className="pb-4">
@@ -101,9 +101,9 @@ const Contact = () => {
         </div>
 
         {/* Departments Directory */}
-        <div className="bg-white rounded-2xl p-8 shadow-card animate-fade-in">
-          <h3 className="text-3xl font-bold text-primary mb-8 text-center">Department Directory</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-card animate-fade-in">
+          <h3 className="text-2xl sm:text-3xl font-bold text-primary mb-6 sm:mb-8 text-center">Department Directory</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {departments.map((dept, index) => (
               <div key={index} className="p-4 bg-soft-gray rounded-lg border border-border hover:shadow-soft transition-all duration-300">
                 <h4 className="font-bold text-primary mb-2">{dept.name}</h4>
@@ -123,9 +123,9 @@ const Contact = () => {
         </div>
 
         {/* Location & Directions */}
-        <div className="mt-16 grid lg:grid-cols-2 gap-8">
-          <div className="bg-white rounded-2xl p-8 shadow-card animate-slide-up">
-            <h3 className="text-2xl font-bold text-primary mb-6">How to Find Us</h3>
+        <div className="mt-10 sm:mt-12 lg:mt-16 grid lg:grid-cols-2 gap-6 sm:gap-8">
+          <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-card animate-slide-up">
+            <h3 className="text-xl sm:text-2xl font-bold text-primary mb-4 sm:mb-6">How to Find Us</h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-medical-green mt-1 flex-shrink-0" />
@@ -146,14 +146,14 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-            <Button className="w-full mt-6 bg-medical-blue hover:bg-medical-blue/90">
+            <Button className="w-full mt-4 sm:mt-6 bg-medical-blue hover:bg-medical-blue/90 min-h-[48px]">
               <Navigation className="w-4 h-4 mr-2" />
               Get Directions
             </Button>
           </div>
 
-          <div className="bg-white rounded-2xl p-8 shadow-card animate-slide-up">
-            <h3 className="text-2xl font-bold text-primary mb-6">Visiting Information</h3>
+          <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-card animate-slide-up">
+            <h3 className="text-xl sm:text-2xl font-bold text-primary mb-4 sm:mb-6">Visiting Information</h3>
             <div className="space-y-4">
               <div>
                 <h4 className="font-medium text-primary mb-2">Visiting Hours</h4>

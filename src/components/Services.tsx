@@ -134,22 +134,22 @@ const Services = () => {
                 Our hospital is equipped with modern medical equipment and staffed by qualified healthcare 
                 professionals who are dedicated to providing the best possible care for our patients.
               </p>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="text-center p-4 bg-soft-gray rounded-lg">
-                  <div className="text-2xl font-bold text-primary">24/7</div>
-                  <div className="text-sm text-muted-foreground">Emergency Care</div>
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                <div className="text-center p-3 sm:p-4 bg-soft-gray rounded-lg">
+                  <div className="text-xl sm:text-2xl font-bold text-primary">24/7</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Emergency Care</div>
                 </div>
-                <div className="text-center p-4 bg-soft-gray rounded-lg">
-                  <div className="text-2xl font-bold text-medical-green">24</div>
-                  <div className="text-sm text-muted-foreground">Hospital Beds</div>
+                <div className="text-center p-3 sm:p-4 bg-soft-gray rounded-lg">
+                  <div className="text-xl sm:text-2xl font-bold text-medical-green">24</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Hospital Beds</div>
                 </div>
-                <div className="text-center p-4 bg-soft-gray rounded-lg">
-                  <div className="text-2xl font-bold text-warm-orange">60+</div>
-                  <div className="text-sm text-muted-foreground">Staff Members</div>
+                <div className="text-center p-3 sm:p-4 bg-soft-gray rounded-lg">
+                  <div className="text-xl sm:text-2xl font-bold text-warm-orange">60+</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Staff Members</div>
                 </div>
-                <div className="text-center p-4 bg-soft-gray rounded-lg">
-                  <div className="text-2xl font-bold text-primary">100's</div>
-                  <div className="text-sm text-muted-foreground">Patients Served</div>
+                <div className="text-center p-3 sm:p-4 bg-soft-gray rounded-lg">
+                  <div className="text-xl sm:text-2xl font-bold text-primary">100's</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Patients Served</div>
                 </div>
               </div>
             </div>
@@ -158,13 +158,14 @@ const Services = () => {
                 src={servicesImage}
                 alt="Medical services and equipment at Hospital@Ekhaya"
                 className="rounded-xl shadow-card w-full max-w-md"
+                loading="lazy"
               />
             </div>
           </div>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {services.map((service, index) => (
             <Card key={index} className="bg-white border-0 shadow-card hover:shadow-elevated transition-all duration-300 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
               <CardHeader className="pb-4">
