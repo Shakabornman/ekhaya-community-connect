@@ -35,8 +35,8 @@ const Hero = () => {
               </span>
             </h1>
             <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 text-white/90 leading-relaxed">
-              Your home for quality healthcare in Galeshewe, Kimberley. 
-              We provide compassionate, professional medical care for our community.
+              Your trusted home for quality healthcare in Galeshewe and Greater Kimberley. 
+              We provide compassionate, professional medical care to our community and surrounding areas.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
